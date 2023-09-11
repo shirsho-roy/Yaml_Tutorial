@@ -1,0 +1,19 @@
+
+#Key Value pairs in Yaml
+microservice:
+  - app: user-authentication
+    port: 9000
+    version: 1.7
+    depoyed: off
+  - app: shopping-cart
+    port: 9002
+    versions: 
+    - 1.9
+    - 2.0
+    - 2.1
+    
+
+microservices:
+  - user-authentication
+  - shopping-cart
+    versions: [1.9,2.0,1.8]
