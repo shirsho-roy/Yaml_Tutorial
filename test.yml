@@ -18,3 +18,26 @@ spec:
     image: curlimages/curl
     command: ["/bin/sh"]
     args: ["-c","Hello World: sleep 300"]  
+
+---
+    #separate version or components
+apiVeersion: v2
+kind: Pod
+metadat: 
+  name: nginx
+  labels:
+    app: nginx
+spec: 
+  containers: 
+  - name: nginx-container
+    image:nginx
+    ports:
+    - containerPort: 90
+    volumeMounts:
+    - name: nginx-vol
+      mountPath: /usr/nginx/html
+  
+  - name: sidecar-container
+    image: curlimages/curl
+    command: ["/bin/sh"]
+    args: ["-c","Hello World: sleep 300"]  
